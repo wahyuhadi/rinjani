@@ -67,11 +67,11 @@ This is an example of how to list things you need to use the software and how to
 3. How to run 
 by default rinjani use sast-rules folder
    ```sh
-   rinjai -e .go
+   rinjani -e .go
    ```
    or
     ```sh
-   rinjai -r /<your rule location> -e .go
+   rinjani -r /<your rule location> -e .go
    ```
 	or  add in your git hook before commit
 	```sh
