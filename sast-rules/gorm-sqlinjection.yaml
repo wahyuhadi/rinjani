@@ -1,0 +1,21 @@
+id: gorm-sqlinjection
+
+info:
+  name: Gorm SQL Injection
+  author: wahyuhadi
+  severity: high
+  details: SQL-Injection
+  impact: Take Over database
+  remediation: Escape the input. or read idomatic
+
+file:
+    indexwith:
+      - type: regex
+        regex:
+          - '(?i)where\(.*\+.*\)'
+      - type: regex
+        regex:
+          - '(?i)and.+=%s|(?i)or.+=%s|(?i)where.+=%s'
+      - type: regex
+        regex:
+          - 'Find\(.*\,.*\)|First\(.*\,.*\)'

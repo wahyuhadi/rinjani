@@ -1,0 +1,17 @@
+id: gorm-sqlinjection
+
+info:
+  name: error yaml file
+  author: wahyuhadi
+  severity: high
+  details: error yaml file
+  impact: for unitest
+
+file:
+    indexwith:
+      - type: regex
+        # Investigate for possible SQL Injection https://github.com/go-gorm/gorm/issues/2517
+        # Likely vulnerable: Where("id = "+id)
+        # Likely not Vulnerable: Where("id = ?", id)
+        regex:
+          - '(?i)where\(.*\+.*\)

@@ -1,0 +1,14 @@
+id: gorm-sqlinjection
+
+info:
+  name: success
+  author: wahyuhadi
+  severity: high
+  details: success2
+  impact: success
+
+file:
+    indexwith:
+      - type: regex
+        regex:
+          - '(?i)where\(.*\+.*\)'

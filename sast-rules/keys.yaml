@@ -1,0 +1,15 @@
+id: aws-access-key
+
+info:
+  name: Aws Key
+  author: wahyuhadi
+  severity: high
+  details: AWS keys
+  impact: Leaks key
+  remediation: put key in .env
+
+file:
+    indexwith:
+      - type: regex
+        regex:
+          - "(A3T[A-Z0-9]|AKIA|AGPA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}"
