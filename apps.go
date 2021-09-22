@@ -19,15 +19,21 @@ var (
 
 func parseOpts() *models.Options {
 	flag.Parse()
+	// Return Options models
 	return &models.Options{
+		// Locations file paths
 		Location: *location,
-		Ext:      *ext,
-		Rules:    *rules,
+		// Extension File
+		Ext: *ext,
+		// Location Rule Files
+		Rules: *rules,
 	}
 }
 
 func main() {
+	// Parse Options and send to struct
 	options := parseOpts()
+
 	files, err := directory.GetFileInDir(*options)
 	if err != nil {
 		gologger.Info().Str("state", "errored").Str("status", "error").Msg(err.Error())
