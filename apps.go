@@ -15,6 +15,7 @@ var (
 	location = flag.String("l", ".", "location file to scan , example -l /tmp/folderscan ")
 	ext      = flag.String("e", "", "extension  , example -e .go ")
 	rules    = flag.String("r", "sast-rules", "example -r /home/rules")
+	reject   = flag.Bool("reject", false, "for reject commit")
 )
 
 func parseOpts() *models.Options {
@@ -68,4 +69,8 @@ func main() {
 	table.SetBorder(true)   // Set Border to false
 	table.AppendBulk(found) // Add Bulk Data
 	table.Render()
+	if *reject {
+		os.Exit(1)
+	}
+
 }
