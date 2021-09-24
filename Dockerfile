@@ -17,7 +17,7 @@ RUN go mod download
 COPY . .
 
 # Build the Go app
-RUN go build -o samalas .
+RUN go build -o rinjani .
 
 
 # Command to run the executable
