@@ -82,6 +82,10 @@ by default rinjani use sast-rules folder
 	rinjani -e .go
 	```
 
+### Installation with docker
+```sh
+   docker pull wahyuhadi/rinjani
+```
 
 
 <!-- USAGE EXAMPLES -->
